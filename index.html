@@ -27,26 +27,55 @@
             </div>
         </div>
         <div class="div">
+            <input type="checkbox" id="menu-toggle" hidden>
+            <label for="menu-toggle" class="menubar">
+                <img src="/img/menu.svg" alt="">
+            </label>
             <a href="/#">
                 <img class="shop-co" src="/img/SHOP.CO.svg" />
             </a>
-            <div class="frame-2">
-                <div class="frame-3">
+            <label for="menu-toggle" class="overlay" aria-hidden="true"></label>
+            <div class="frame-2" aria-hidden="true">
+                <label for="menu-toggle" class="close-btn">
+                    <img class="" src="/img/exit.svg" />
+                </label>
+                <div class="laptop">
+                    <div class="frame-3">
+                        <div class="text-wrapper-2">
+                            <a href="/#">Shop</a>
+                        </div>
+                        <div class="img-wrapper">
+                            <img class="vector-3" src="/img/drop-down.svg" />
+                        </div>
+                    </div>
                     <div class="text-wrapper-2">
-                        <a href="/#">Shop</a>
+                        <a href="/#">On Sale</a>
                     </div>
-                    <div class="img-wrapper">
-                        <img class="vector-3" src="/img/drop-down.svg" />
+                    <div class="text-wrapper-2">
+                        <a href="/#">New Arrivals</a>
+                    </div>
+                    <div class="text-wrapper-2">
+                        <a href="/#">Brands</a>
                     </div>
                 </div>
-                <div class="text-wrapper-2">
-                    <a href="/#">On Sale</a>
-                </div>
-                <div class="text-wrapper-2">
-                    <a href="/#">New Arrivals</a>
-                </div>
-                <div class="text-wrapper-2">
-                    <a href="/#">Brands</a>
+                <div class="navbar">
+                    <div class="frame-3">
+                        <div class="text-wrapper-2">
+                            <a href="/#">Shop</a>
+                        </div>
+                        <div class="img-wrapper">
+                            <img class="vector-3" src="/img/drop-down.svg" />
+                        </div>
+                    </div>
+                    <div class="text-wrapper-2">
+                        <a href="/#">On Sale</a>
+                    </div>
+                    <div class="text-wrapper-2">
+                        <a href="/#">New Arrivals</a>
+                    </div>
+                    <div class="text-wrapper-2">
+                        <a href="/#">Brands</a>
+                    </div>
                 </div>
             </div>
             <div class="frame-4">
@@ -58,6 +87,11 @@
                 <input type="text" class="text-wrapper-3" placeholder="Search for products..." />
             </div>
             <div class="frame-6">
+                <div class="frame-5-search">
+                    <a href="/#" class="search">
+                        <img class="vector-search" src="/img/search.svg" />
+                    </a>
+                </div>
                 <div class="frame-5">
                     <a href="/#">
                         <img class="vector-5" src="/img/shopping-cart.svg" />
@@ -86,12 +120,12 @@
                 <div class="text-wrapper-7">International Brands</div>
             </div>
             <img class="line" src="/img/line-9.svg" />
-            <div class="frame-8">
+            <div class="frame-8-1">
                 <div class="text-wrapper-6">2,000+</div>
                 <div class="text-wrapper-7">High-Quality Products</div>
             </div>
-            <img class="line" src="/img/line-10.svg" />
-            <div class="frame-8">
+            <img class="line-10" src="/img/line-10.svg" />
+            <div class="frame-8-2">
                 <div class="text-wrapper-6">30,000+</div>
                 <div class="text-wrapper-7">Happy Customers</div>
             </div>
@@ -113,8 +147,8 @@
             <img src="/img/calvin-klein-logo-1-1.svg" alt="" srcset="">
         </div>
         <div class="text-wrapper-8">NEW ARRIVALS</div>
-        <div>
-            <div>
+        <div class="text-center">
+            <div class="div-center">
                 <div class="image-wrapper">
                     <a href="/#">
                         <img class="image" src="/img/image-7.png" />
@@ -141,7 +175,7 @@
                     <div class="text-wrapper-14">$120</div>
                 </div>
             </div>
-            <div>
+            <div class="div-center">
                 <div class="frame-14">
                     <a href="/#">
                         <img class="image-2" src="/img/image-8.png" />
@@ -171,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="div-center">
                 <div class="frame-15">
                     <a href="/#">
                         <img class="image" src="/img/image-9.png" />
@@ -196,7 +230,7 @@
                 </div>
                 <div class="text-wrapper-18">$180</div>
             </div>
-            <div>
+            <div class="div-center">
                 <div class="frame-16">
                     <a href="/#">
                         <img class="image" src="/img/image-10.png" />
@@ -341,7 +375,7 @@
                     <div class="text-wrapper-14">$210</div>
                 </div>
             </div>
-        </div>        
+        </div>
         <div class="frame-32">
             <div class="text-wrapper-23">
                 <a href="/#">View All</a>
@@ -374,7 +408,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="text-wrapper-10">OUR HAPPY CUSTOMERS</div>
         <div class="arrow-down-bold">
             <a href="/#">
@@ -400,12 +434,14 @@
                         <div class="frame-41">
                             <div class="frame-3">
                                 <div class="text-wrapper-26">Sarah M.</div>
-                                <div class="frame-43">
+                                <div class="frame-56">
                                     <img class="vector-9" src="/img/tick.svg" />
                                 </div>
                             </div>
                             <p class="text-wrapper-27">
-                                &#34;I&#39;m blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I&#39;ve bought has exceeded my expectations.”
+                                &#34;I&#39;m blown away by the quality and style of the clothes I received from Shop.co.
+                                From casual wear to elegant dresses, every piece I&#39;ve bought has exceeded my
+                                expectations.”
                             </p>
                         </div>
                     </div>
@@ -424,12 +460,14 @@
                         <div class="frame-41">
                             <div class="frame-3">
                                 <div class="text-wrapper-26">Sarah M.</div>
-                                <div class="frame-5">
+                                <div class="frame-56">
                                     <img class="vector-8" src="img/tick.svg" />
                                 </div>
                             </div>
                             <p class="text-wrapper-27">
-                                &#34;I&#39;m blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I&#39;ve bought has exceeded my expectations.”
+                                &#34;I&#39;m blown away by the quality and style of the clothes I received from Shop.co.
+                                From casual wear to elegant dresses, every piece I&#39;ve bought has exceeded my
+                                expectations.”
                             </p>
                         </div>
                     </div>
@@ -448,12 +486,14 @@
                         <div class="frame-41">
                             <div class="frame-3">
                                 <div class="text-wrapper-26">Alex K.</div>
-                                <div class="frame-5">
+                                <div class="frame-56">
                                     <img class="vector-9" src="img/tick.svg" />
                                 </div>
                             </div>
                             <p class="text-wrapper-27">
-                                &#34;Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.”
+                                &#34;Finding clothes that align with my personal style used to be a challenge until I
+                                discovered Shop.co. The range of options they offer is truly remarkable, catering to a
+                                variety of tastes and occasions.”
                             </p>
                         </div>
                     </div>
@@ -472,12 +512,14 @@
                         <div class="frame-41">
                             <div class="frame-3">
                                 <div class="text-wrapper-26">James L.</div>
-                                <div class="frame-5">
+                                <div class="frame-56">
                                     <img class="vector-8" src="/img/tick.svg" />
                                 </div>
                             </div>
                             <p class="text-wrapper-27">
-                                &#34;As someone who&#39;s always on the lookout for unique fashion pieces, I&#39;m thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”
+                                &#34;As someone who&#39;s always on the lookout for unique fashion pieces, I&#39;m
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also on-point with the latest trends.”
                             </p>
                         </div>
                     </div>
@@ -496,12 +538,14 @@
                         <div class="frame-41">
                             <div class="frame-3">
                                 <div class="text-wrapper-26">Mooen</div>
-                                <div class="frame-43">
+                                <div class="frame-56">
                                     <img class="vector-10" src="/img/tick.svg" />
                                 </div>
                             </div>
                             <p class="text-wrapper-27">
-                                &#34;As someone who&#39;s always on the lookout for unique fashion pieces, I&#39;m thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”
+                                &#34;As someone who&#39;s always on the lookout for unique fashion pieces, I&#39;m
+                                thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but
+                                also on-point with the latest trends.”
                             </p>
                         </div>
                     </div>
@@ -538,57 +582,57 @@
                         </div>
                         <div class="social-icons">
                             <a href="/#" class="social-btn">
-                              <img src="/img/twitter.svg" />
-                            </a>
-                            <a href="/#" class="social-btn active">
-                              <img src="/img/facebook.svg" />
+                                <img src="/img/twitter.svg" />
                             </a>
                             <a href="/#" class="social-btn">
-                              <img src="/img/instagram.svg" />
+                                <img class="facebook" src="/img/facebook.svg" />
                             </a>
                             <a href="/#" class="social-btn">
-                              <img src="/img/github.svg" />
+                                <img src="/img/instagram.svg" />
                             </a>
-                          </div>
+                            <a href="/#" class="social-btn">
+                                <img src="/img/github.svg" />
+                            </a>
+                        </div>
                     </div>
                     <div class="footer-menus">
                         <div class="frame-54">
-                          <div class="help-menu">COMPANY</div>
-                          <ul class="about-features-works">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Works</a></li>
-                            <li><a href="#">Career</a></li>
-                          </ul>
+                            <div class="help-menu">COMPANY</div>
+                            <ul class="about-features-works">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Works</a></li>
+                                <li><a href="#">Career</a></li>
+                            </ul>
                         </div>
                         <div class="frame-54">
-                          <div class="help-menu">HELP</div>
-                          <ul class="about-features-works">
-                            <li><a href="#">Customer Support</a></li>
-                            <li><a href="#">Delivery Details</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                          </ul>
+                            <div class="help-menu">HELP</div>
+                            <ul class="about-features-works">
+                                <li><a href="#">Customer Support</a></li>
+                                <li><a href="#">Delivery Details</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
                         </div>
                         <div class="frame-54">
-                          <div class="help-menu">FAQ</div>
-                          <ul class="about-features-works">
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Manage Deliveries</a></li>
-                            <li><a href="#">Orders</a></li>
-                            <li><a href="#">Payments</a></li>
-                          </ul>
+                            <div class="help-menu">FAQ</div>
+                            <ul class="about-features-works">
+                                <li><a href="#">Account</a></li>
+                                <li><a href="#">Manage Deliveries</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Payments</a></li>
+                            </ul>
                         </div>
                         <div class="frame-54">
-                          <div class="help-menu">RESOURCES</div>
-                          <ul class="about-features-works">
-                            <li><a href="#">Free eBooks</a></li>
-                            <li><a href="#">Development Tutorial</a></li>
-                            <li><a href="#">How to - Blog</a></li>
-                            <li><a href="#">Youtube Playlist</a></li>
-                          </ul>
+                            <div class="help-menu">RESOURCES</div>
+                            <ul class="about-features-works">
+                                <li><a href="#">Free eBooks</a></li>
+                                <li><a href="#">Development Tutorial</a></li>
+                                <li><a href="#">How to - Blog</a></li>
+                                <li><a href="#">Youtube Playlist</a></li>
+                            </ul>
                         </div>
-                    </div>                      
+                    </div>
                 </div>
                 <div>
                     <img class="line-3" src="/img/line-4.svg" />
@@ -610,7 +654,7 @@
                         <img class="g-pay" src="/img/g-pay.svg" />
                     </div>
                 </div>
-                <p class="element-all-rights">Shop.co © 2000-2023, All Rights Reserved</p>
+                <p class="element-all-rights">Shop.co &copy; 2000-2023, All Rights Reserved</p>
             </div>
         </div>
     </div>
