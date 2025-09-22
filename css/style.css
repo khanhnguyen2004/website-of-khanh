@@ -62,7 +62,7 @@
     background-color: #ffffff;
     overflow: hidden;
     width: 100%;
-    min-width: 1024px;
+    min-width: 1440px;
     height: 4370px;
     position: relative;
 }
@@ -71,7 +71,7 @@
     position: absolute;
     top: 134px;
     left: 0;
-    width: 100%;
+    width: 1440px;
     height: 663px;
     background-image: url(../img/rectangle-2.png);
     background-size: 100% 100%;
@@ -81,21 +81,21 @@
     position: absolute;
     width: 7.22%;
     height: 2.38%;
-    top: 5.03%;
-    left: 87.15%;
+    top: 220px;
+    left: 1255px;
 }
 
 .homepage .img {
     position: absolute;
-    top: 9.86%;
-    left: 52.08%;
+    top: 431px;
+    left: 750px;
 }
 
 .homepage .frame {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1440px;
     height: 38px;
     background-color: #000000;
 }
@@ -153,8 +153,8 @@
     position: absolute;
 }
 
-.homepage a:hover .vector-2 {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+.homepage a:hover .vector-2 path {
+    fill: #fc5555;
 }
 
 .homepage .div {
@@ -312,8 +312,8 @@
     margin-left: -1px;
 }
 
-.homepage a:hover .vector-5 {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+.homepage a:hover .vector-5 path {
+    fill: #fc5555;
 }
 
 .homepage .vector-6 {
@@ -322,8 +322,8 @@
     margin-top: 1px;
 }
 
-.homepage a:hover .vector-6 {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+.homepage a:hover .vector-6 path {
+    fill: #fc5555;
 }
 
 .homepage .menubar {
@@ -499,7 +499,7 @@
     position: absolute;
     top: 797px;
     left: 0;
-    width: 100%;
+    width: 1440px;
     height: 122px;
     background-color: #000000;
 }
@@ -593,12 +593,12 @@
     line-height: normal;
 }
 
-.homepage .arrow-down-bold-2 a:hover .vector-12 {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+.homepage .arrow-down-bold-2 a:hover .vector-12 path {
+    fill: #fc5555;
 }
 
-.homepage .arrow-down-bold a:hover .vector-11 {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+.homepage .arrow-down-bold a:hover .vector-11 path {
+    fill: #fc5555;
 }
 
 .homepage .frame-9 {
@@ -1876,13 +1876,13 @@
     transition: all 0.3s ease;
 }
 
-.homepage .social-btn img {
+.homepage .social-btn path {
     width: 14px;
     height: 14px;
 }
 
-.homepage .social-btn .facebook {
-    filter: brightness(0) invert(0);
+.homepage .social-btn .facebook path {
+    fill: #000000;
 }
 
 .homepage .social-btn:hover {
@@ -1890,8 +1890,8 @@
     border-color: #000000;
 }
 
-.homepage .social-btn:hover img {
-    filter: brightness(0) invert(1);
+.homepage .social-btn:hover path {
+    fill: #ffffff;
 }
 
 .homepage .footer-menus {
@@ -2040,10 +2040,12 @@
     .homepage .rectangle {
         position: relative;
         background-color: #f2f0f1;
+        /* top: 99px; */
         top: 300px;
         left: 0;
         bottom: 0;
         width: 100%;
+        /* height: 1254px; */
         height: 853px;
         background-image: url(../img/rectangle-2-small.png);
         background-size: contain;
@@ -2055,16 +2057,16 @@
         position: absolute;
         width: 76px;
         height: 76px;
-        top: 63.59%;
-        left: 75.15%;
+        top: 543px;
+        left: 293px;
     }
 
     .homepage .img {
         position: absolute;
         width: 44px;
         height: 44px;
-        top: 75%;
-        left: 6.73%;
+        top: 639px;
+        left: 27px;
     }
 
     .homepage .frame {
@@ -2129,7 +2131,7 @@
         display: inline-flex;
     }
 
-    .homepage .menubar img {
+    .homepage .menubar svg path {
         width: 20px;
         height: 16px;
         position: relative;
@@ -2338,7 +2340,6 @@
     .homepage a:hover .vector-6 {
         filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
     }
-
     .homepage .p {
         position: absolute;
         top: 100px;
@@ -2516,57 +2517,57 @@
 
     .homepage .rectangle-2 {
         position: absolute;
-        top: 797px;
+        top: 950px;
         left: 0;
-        width: 1440px;
-        height: 122px;
+        width: 100%;
+        height: 146px;
         background-color: #000000;
     }
 
     .homepage .versace-logo {
         position: absolute;
-        width: 11.56%;
-        height: 0;
-        top: 19.24%;
-        left: 6.94%;
+        width: 116.74px;
+        height: 23.25px;
+        top: 991px;
+        left: 17px;
     }
 
     .homepage .zara-logo {
         position: absolute;
-        top: 839px;
-        left: 372px;
-        width: 91px;
-        height: 38px;
+        top: 990px;
+        left: 167px;
+        width: 63.81px;
+        height: 26.65px;
     }
 
     .homepage .gucci-logo {
         position: absolute;
-        top: 840px;
-        left: 569px;
-        width: 156px;
-        height: 36px;
+        top: 991px;
+        left: 265px;
+        width: 109.39px;
+        height: 22.64px;
     }
 
     .homepage .prada-logo {
         position: absolute;
-        top: 842px;
-        left: 831px;
-        width: 194px;
-        height: 32px;
+        top: 1037px;
+        left: 49px;
+        width: 127px;
+        height: 21px;
     }
 
-    .homepage .calvin-klein-logo {
+    .homepage .calvin-klein-logo{
         position: absolute;
-        width: 14.36%;
-        height: 0;
-        top: 19.24%;
-        left: 78.58%;
+        width: 134.84px;
+        height: 21.75px;
+        top: 1037px;
+        left: 207px;
     }
 
     .homepage .text-wrapper-8 {
         position: absolute;
-        top: 998px;
-        left: calc(50% - 202px);
+        top: 1140px;
+        left: calc(50% - 134px);
         height: 58px;
         display: flex;
         align-items: center;
@@ -2574,7 +2575,7 @@
         font-family: "Integral CF-Bold", sans-serif;
         font-weight: 700;
         color: #000000;
-        font-size: 48px;
+        font-size: 32px;
         text-align: center;
         letter-spacing: 0;
         line-height: normal;
@@ -2699,10 +2700,10 @@
 
     .homepage .image-wrapper {
         position: absolute;
-        top: 1104px;
-        left: 100px;
-        width: 295px;
-        height: 298px;
+        top: 1217px;
+        left: 20px;
+        width: 198px;
+        height: 200px;
         display: flex;
         background-color: #f0eeed;
         border-radius: 20px;
@@ -2711,8 +2712,8 @@
     }
 
     .homepage .image {
-        width: 295px;
-        height: 298px;
+        width: 188px;
+        height: 200px;
         object-fit: cover;
         transition: transform 0.6s ease;
     }
