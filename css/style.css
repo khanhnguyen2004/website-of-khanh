@@ -67,30 +67,6 @@
     position: relative;
 }
 
-.homepage .rectangle {
-    position: absolute;
-    top: 134px;
-    left: 0;
-    width: 1440px;
-    height: 663px;
-    background-image: url(../img/rectangle-2.png);
-    background-size: 100% 100%;
-}
-
-.homepage .vector {
-    position: absolute;
-    width: 7.22%;
-    height: 2.38%;
-    top: 220px;
-    left: 1255px;
-}
-
-.homepage .img {
-    position: absolute;
-    top: 431px;
-    left: 750px;
-}
-
 .homepage .frame {
     position: absolute;
     top: 0;
@@ -189,10 +165,12 @@
 .homepage .navbar {
     display: none;
 }
+
 .homepage .laptop {
     display: flex;
     gap: 24px;
 }
+
 .homepage .laptop .frame-3 {
     display: inline-flex;
     align-items: center;
@@ -330,9 +308,66 @@
     display: none;
 }
 
+.homepage .slide-show {
+    overflow: hidden;
+    position: relative;
+    top: 134px;
+    height: 663px;
+}
+
+.homepage .list-banner {
+    display: flex;
+    transition: 0.5s;
+}
+
+.homepage .banner {
+    position: relative;
+    flex: 0 0 100%;
+    width: 1440px;
+}
+
+.homepage .rectangle-banner-1 {
+    position: absolute;
+    left: 0;
+    width: 1440px;
+    height: 663px;
+    background-image: url(../img/rectangle-2.png);
+    background-size: 100% 100%;
+}
+
+.homepage .rectangle-banner-2 {
+    position: absolute;
+    left: 0;
+    width: 1440px;
+    height: 663px;
+    background-image: url(../img/image-11.png);
+    background-size: cover;
+}
+
+.homepage .rectangle-banner-3 {
+    position: absolute;
+    left: 0;
+    width: 1440px;
+    height: 663px;
+    background-image: url(../img/image-12.png);
+    background-size: 100% 100%;
+}
+
+.homepage .vector {
+    position: absolute;
+    top: 85px;
+    left: 1255px;
+}
+
+.homepage .img {
+    position: absolute;
+    top: 297px;
+    left: 750px;
+}
+
 .homepage .p {
     position: absolute;
-    top: 237px;
+    top: 105px;
     left: 100px;
     width: 577px;
     height: 173px;
@@ -349,7 +384,7 @@
 
 .homepage .text-wrapper-4 {
     position: absolute;
-    top: 436px;
+    top: 302px;
     left: 100px;
     width: 550px;
     font-family: "Satoshi-Regular", sans-serif;
@@ -370,7 +405,7 @@
     gap: 12px;
     padding: 16px 54px;
     position: absolute;
-    top: 507px;
+    top: 375px;
     left: 100px;
     background-color: #000000;
     border-radius: 62px;
@@ -425,7 +460,7 @@
     align-items: center;
     gap: 32px;
     position: absolute;
-    top: 607px;
+    top: 475px;
     left: 100px;
 }
 
@@ -495,6 +530,57 @@
     object-fit: cover;
 }
 
+.homepage .btn {
+    font-size: 40px;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.homepage .btn i {
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+
+.homepage .btn i:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.homepage .btn-left {
+    left: 0;
+}
+
+.homepage .btn-right {
+    right: 0;
+}
+
+.homepage .index-banner {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.homepage .index-item {
+    border: 2px solid #999999;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 5px;
+    height: 5px;
+}
+
+.homepage .index-item.active {
+    background-color: #999999;
+}
+
 .homepage .rectangle-2 {
     position: absolute;
     top: 797px;
@@ -560,6 +646,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
+
 .homepage .text-wrapper-9 {
     position: absolute;
     top: 1735px;
@@ -1781,6 +1868,7 @@
     overflow: hidden;
     margin-top: -1px;
     transition: all 0.3 ease;
+    cursor: pointer;
 }
 
 .homepage .text-wrapper-29 {
@@ -2182,9 +2270,11 @@
         right: 0;
         padding: 20px 20px;
     }
+
     .homepage .laptop {
         display: none;
     }
+
     .homepage .navbar {
         margin-top: 80px;
         display: flex;
@@ -2316,7 +2406,10 @@
         position: relative;
         flex: 0 0 auto;
     }
-    .homepage .frame-5-search, .search, .vector-search {
+
+    .homepage .frame-5-search,
+    .search,
+    .vector-search {
         display: block;
         position: absolute;
         margin-left: -10px;
@@ -2328,7 +2421,7 @@
     }
 
     .homepage a:hover .vector-5 {
-        filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+        fill: #fc5555;
     }
 
     .homepage .vector-6 {
@@ -2338,8 +2431,9 @@
     }
 
     .homepage a:hover .vector-6 {
-        filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+        fill: #fc5555;
     }
+
     .homepage .p {
         position: absolute;
         top: 100px;
@@ -2556,7 +2650,7 @@
         height: 21px;
     }
 
-    .homepage .calvin-klein-logo{
+    .homepage .calvin-klein-logo {
         position: absolute;
         width: 134.84px;
         height: 21.75px;
@@ -2615,11 +2709,11 @@
     }
 
     .homepage .arrow-down-bold-2 a:hover .vector-12 {
-        filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+        fill: #fc5555;
     }
 
     .homepage .arrow-down-bold a:hover .vector-11 {
-        filter: brightness(0) saturate(100%) invert(39%) sepia(93%) saturate(2405%) hue-rotate(345deg) brightness(98%) contrast(95%);
+        fill: #fc5555;
     }
 
     .homepage .frame-9 {
@@ -3903,7 +3997,7 @@
     }
 
     .homepage .social-btn .facebook {
-        filter: brightness(0) invert(0);
+        fill: #000000;
     }
 
     .homepage .social-btn:hover {
@@ -3912,7 +4006,7 @@
     }
 
     .homepage .social-btn:hover img {
-        filter: brightness(0) invert(1);
+        fill: #ffffff;
     }
 
     .homepage .footer-menus {
