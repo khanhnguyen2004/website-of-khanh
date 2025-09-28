@@ -1111,6 +1111,7 @@ footer {
     height: 100%;
     max-height: 177px;
     margin-top: 140px;
+    gap: 113.5px;
 }
 
 .footer-bottom .top .left {
