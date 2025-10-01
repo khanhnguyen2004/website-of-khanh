@@ -1,0 +1,164 @@
+.header-top {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+    width: 100%;
+    padding: 0 100px;
+    position: relative;
+}
+
+.header-top p {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    flex: 1;
+}
+
+.header-top a {
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.header-top a:hover {
+    text-underline-offset: 4px;
+    text-decoration: underline;
+}
+
+.header-top .icon-exit {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.header-top .icon-exit:hover path {
+    fill: #fc5555;
+}
+
+.header-bottom {
+    width: 100%;
+    padding: 0 100px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+    margin: 24px 0;
+}
+
+
+.header-bottom .logo svg {
+    width: 160px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.header-bottom .logo a {
+    cursor: pointer;
+}
+
+.header-bottom .menu ul {
+    display: flex;
+    gap: 24px;
+}
+
+.header-bottom .menu li {
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+}
+
+.header-bottom .menu .icon-dropdown {
+    width: 16px;
+    height: 16px;
+}
+
+.header-bottom .menu a {
+    text-decoration: none;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-bottom .menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.header-bottom .search {
+    max-width: 577px;
+    max-height: 48px;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 62px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    flex: 1;
+    cursor: pointer;
+    padding: 12px 16px;
+    gap: 12px;
+}
+
+.header-bottom .search .icon-search {
+    width: 24px;
+    height: 24px;
+}
+
+.header-bottom .search a {
+    cursor: pointer;
+}
+
+.header-bottom .search .icon-search:hover path {
+    fill: #8b8585;
+}
+
+.header-bottom .search input {
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+}
+
+.header-bottom .search input::placeholder {
+    opacity: 0.4;
+    color: #000000;
+}
+
+.header-bottom .icon {
+    display: flex;
+    gap: 15px;
+}
+
+.header-bottom .icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.header-bottom .icon .icon-cart:hover path,
+.header-bottom .icon .icon-user:hover path {
+    fill: #fc5555;
+}
+
+.header-bottom .icon a {
+    cursor: pointer;
+}
