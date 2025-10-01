@@ -881,6 +881,7 @@ main {
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
+    max-width: 1440px;
 }
 
 .our-happy-customers .top {
@@ -920,6 +921,8 @@ main {
     display: flex;
     gap: 20px;
     overflow: hidden;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .our-happy-customers .bottom .review-card {
@@ -928,6 +931,7 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 28px 32px;
+    flex:  0 0 auto;
 }
 
 .our-happy-customers .bottom .review-card:first-child,
