@@ -1,0 +1,209 @@
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.left .product-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 715px;
+    width: 100%;
+    height: 100%;
+    max-height: 508px;
+    gap: 24px;
+    padding: 20px 24px;
+    border-radius: 20px;
+    border: 1px solid #0000001a;
+    position: relative;
+    flex: 1;
+}
+
+.left .product-cart .product {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    max-width: 667px;
+    max-height: 123px;
+}
+
+.left .product .img-product img {
+    position: relative;
+    width: 124px;
+    height: 124px;
+    background-color: #f0eeed;
+    border-radius: 8.66px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.left .product .right {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 124px;
+    max-width: 527px;
+}
+
+.left .product .right .info-product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 118px;
+    justify-content: space-between;
+}
+
+.left .product .right .info-product .name-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 20px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.left .product .right .info-product .name-product a {
+    color: #000000;
+}
+
+.left .product .right .info-product .name-product a:hover {
+    color: #fc5555;
+}
+
+.left .product .right .info-product .variant {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.left .product .right .info-product .variant .size,
+.left .product .right .info-product .variant .color {
+    height: 100%;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    font-size: 14px;
+    max-height: 19px;
+}
+
+.left .product .right .info-product .variant .size .name-size,
+.left .product .right .info-product .variant .size .name-color {
+    color: #000000;
+    opacity: 0.6;
+}
+
+.left .product .right .info-product .price {
+    font-size: 24px;
+    height: 100%;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    color: #000000;
+}
+
+.left .product .right .control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 225px;
+    height: 100%;
+    max-height: 124px;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+
+.left .product .right .control .delete {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.left .product .right .control .delete .icon-trash:hover path {
+    fill: #fc5555
+}
+
+.left .product .right .control .amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px 20px;
+    position: relative;
+    background-color: #efefef;
+    border-radius: 62px;
+    overflow: hidden;
+    height: 100%;
+    max-height: 44px;
+    width: 100%;
+    max-width: 126px;
+    margin-top: 56px;
+}
+
+.left .product .right .control .amount .control-amount {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.left .product .right .control .amount .icon-minus {
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    top: 9.5px;
+    left: 2px;
+}
+
+.left .product .right .control .amount .icon-minus:hover path {
+    fill: #000000;
+    opacity: 0.6;
+}
+
+.left .product .right .control .amount .amount-input {
+    position: relative;
+    width: 35px;
+    margin-top: 2.5px;
+    font-family: "Satoshi-Medium", sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.left .product .right .control .amount .icon-plus {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 2.5px;
+    left: 2px;
+}
+
+.left .product .right .control .amount .icon-plus:hover path {
+    fill: #000000;
+    opacity: 0.6;
+}
+
+.line-4 {
+    width: 100%;
+    max-width: 667px;
+}

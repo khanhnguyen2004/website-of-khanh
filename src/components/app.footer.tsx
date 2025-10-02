@@ -27,7 +27,7 @@ const AppFooter = () => {
             <div className={style["footer-bottom"]}>
                 <div className={style["top"]}>
                     <div className={style["left"]}>
-                        <div className="content">
+                        <div className={style["content"]}>
                             <svg xmlns="http://www.w3.org/2000/svg" className={style["icon-logo"]} width="159" height="25"
                                 viewBox="0 0 159 25" fill="none">
                                 <path

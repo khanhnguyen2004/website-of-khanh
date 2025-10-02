@@ -1,13 +1,19 @@
-import styles from "./page.module.css";
+import AppBanner from "@/components/app.banner";
+import AppCategory from "@/components/app.category";
+import AppLogoBrand from "@/components/app.logo-brand";
+import AppProductNew from "@/components/app.product-new";
+import AppProductTop from "@/components/app.product.top";
+import AppReview from "@/components/app.review";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-
-      </main>
-      <footer className={styles.footer}>
-      </footer>
-    </div>
+    <>
+      <AppBanner />
+      <AppLogoBrand />
+      <AppProductNew />
+      <AppProductTop />
+      <AppCategory />
+      <AppReview />
+    </>
   );
 }

@@ -1,0 +1,84 @@
+.breadcrumb {
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    max-height: 22px;
+}
+
+.breadcrumb .left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.breadcrumb .left .text {
+    position: relative;
+    width: fit-content;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    opacity: 0.6;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.breadcrumb .left .text a {
+    color: #000000;
+    opacity: 0.6;
+}
+
+.breadcrumb .left .text:hover a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.breadcrumb .left .icon-greater {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+}
+
+.breadcrumb .right {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+}
+
+.breadcrumb .right a {
+    color: #000000;
+    opacity: 0.6;
+}
+
+.breadcrumb .right:hover a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.title {
+    width: 100%;
+    height: 100%;
+    max-height: 48px;
+    font-family: 'Candal', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.cart {
+    width: 100%;
+    max-height: 580px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 80px;
+}

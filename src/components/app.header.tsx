@@ -16,7 +16,7 @@ const AppHeader = () => {
             </div>
             <div className={style["header-bottom"]}>
                 <div className={style["logo"]}>
-                    <a href={"#"}>
+                    <a href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" className={style["icon-logo"]} width="159" height="25"
                             viewBox="0 0 159 25" fill="none">
                             <path
@@ -54,7 +54,7 @@ const AppHeader = () => {
                     <input type="text" placeholder="Search for products..." />
                 </div>
                 <div className={style["icon"]}>
-                    <a href={"./cart.html"}>
+                    <a href="/cart">
                         <svg xmlns="http://www.w3.org/2000/svg" className={style["icon-cart"]} width="24" height="24"
                             viewBox="0 0 24 24" fill="none">
                             <path
