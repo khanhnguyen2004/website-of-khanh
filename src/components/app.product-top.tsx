@@ -1,50 +1,50 @@
 'use client';
-import style from '@/styles/app.product-new.module.css';
+import style from '@/styles/app.product-top.module.css';
 import RenderStars from '@/utils/renderStars';
-const AppProductNew = () => {
+const AppProductTop = () => {
     const products = [
         {
             id: 1,
-            name: "T-shirt with Tape Details",
-            image: "/img/image-7.png",
-            rating: 4.5,
-            priceNew: 120,
+            name: "Vertical Striped Shirt",
+            priceNew: 212,
+            priceOld: 232,
+            discount: "-20%",
+            image: "/img/image-7-1.png",
+            rating: 5,
+        },
+        {
+            id: 2,
+            name: "Courage Graphic T-shirt",
+            priceNew: 145,
+            image: "/img/image-8-1.png",
+            rating: 4,
             priceOld: null,
             discount: null,
         },
         {
-            id: 2,
-            name: "Skinny Fit Jeans",
-            image: "/img/image-8.png",
-            rating: 3.5,
-            priceNew: 240,
-            priceOld: 260,
-            discount: "-20%",
-        },
-        {
             id: 3,
-            name: "Checkered Shirt",
-            image: "/img/image-9.png",
-            rating: 4.5,
-            priceNew: 180,
+            name: "Loose Fit Bermuda Shorts",
+            priceNew: 80,
+            image: "/img/image-9-1.png",
+            rating: 3,
             priceOld: null,
             discount: null,
         },
         {
             id: 4,
-            name: "Sleeve Striped T-shirt",
-            image: "/img/image-10.png",
+            name: "Sleeve Stripped T-shirt",
+            priceNew: 210,
+            image: "/img/image-10-1.png",
             rating: 4.5,
-            priceNew: 130,
-            priceOld: 160,
-            discount: "-30%",
+            priceOld: null,
+            discount: null,
         },
     ];
     return (
         <>
-            <div className={style["product-new-arrivals"]}>
+            <div className={style["product-top-selling"]}>
                 <div className={style["product-title"]}>
-                    <span>NEW ARRIVALS</span>
+                    <span>TOP SELLING</span>
                 </div>
                 <div className={style["product"]}>
                     {products.map((p) => (
@@ -75,11 +75,7 @@ const AppProductNew = () => {
                     <a href={"#"}>View All</a>
                 </div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" className={style["line-1"]} width="1240" height="1" viewBox="0 0 1240 1"
-                fill="none">
-                <line x1="-4.37114e-08" y1="0.500122" x2="1240" y2="0.500014" stroke="black" strokeOpacity="0.1" />
-            </svg>
         </>
     );
 }
-export default AppProductNew;
+export default AppProductTop;

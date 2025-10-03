@@ -10,7 +10,7 @@
     max-width: 715px;
     width: 100%;
     height: 100%;
-    max-height: 508px;
+    /* max-height: 508px; */
     gap: 24px;
     padding: 20px 24px;
     border-radius: 20px;
@@ -161,6 +161,12 @@
     height: 20px;
 }
 
+.left .product .right .control .amount .control-amount button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
 .left .product .right .control .amount .icon-minus {
     position: absolute;
     width: 16px;
@@ -188,6 +194,21 @@
     border: none;
     outline: none;
     background: transparent;
+    transition: all 0.3s ease;
+}
+
+.amount-input:focus {
+    border: 1px solid #0070f3;
+    transform: scale(1.05);
+}
+
+.smooth-change {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.smooth-change:active {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
 }
 
 .left .product .right .control .amount .icon-plus {

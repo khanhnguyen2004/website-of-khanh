@@ -60,6 +60,8 @@
     border-radius: 20px;
     padding: 28px 32px;
     flex: 0 0 auto;
+    transition: transform 0.6s ease-in-out;
+    box-sizing: border-box;
 }
 
 .our-happy-customers .bottom .review-card:first-child,

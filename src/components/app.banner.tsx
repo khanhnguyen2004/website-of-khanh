@@ -25,6 +25,7 @@ const AppBanner = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [isTransitioning, setIsTransitioning] = useState(true);
     const listRef = useRef<HTMLDivElement>(null);
+    const isAnimating = useRef(false);
     const slides = [
         banners[banners.length - 1],
         ...banners,
@@ -35,32 +36,48 @@ const AppBanner = () => {
             nextSlide();
         }, 4000);
         return () => clearInterval(interval);
-    }, []);
+    }, [currentIndex]);
     const prevSlide = () => {
+        if (isAnimating.current) {
+            return;
+        }
+        isAnimating.current = true;
         setCurrentIndex((prev) => prev - 1);
         setIsTransitioning(true);
     };
 
     const nextSlide = () => {
+        if (isAnimating.current) {
+            return;
+        }
+        isAnimating.current = true;
         setCurrentIndex((prev) => prev + 1);
         setIsTransitioning(true);
     };
     useEffect(() => {
+        let timeout: NodeJS.Timeout;
         if (currentIndex === 0) {
-            const timeout = setTimeout(() => {
+            timeout = setTimeout(() => {
                 setIsTransitioning(false);
                 setCurrentIndex(banners.length);
             }, 500);
-            return () => clearTimeout(timeout);
         }
-        if (currentIndex === slides.length - 1) {
-            const timeout = setTimeout(() => {
+        else if (currentIndex === slides.length - 1) {
+            timeout = setTimeout(() => {
                 setIsTransitioning(false);
                 setCurrentIndex(1);
             }, 500);
-            return () => clearTimeout(timeout);
         }
-        setIsTransitioning(true);
+        else {
+            setIsTransitioning(true);
+        }
+        const unlock = setTimeout(() => {
+            isAnimating.current = false;
+        }, 500);
+        return () => {
+            clearTimeout(timeout);
+            clearTimeout(unlock);
+        }
     }, [currentIndex]);
 
     const goToSlide = (index: number) => {
