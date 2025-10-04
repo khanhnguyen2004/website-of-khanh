@@ -7,7 +7,7 @@ const AppHeader = () => {
         <>
             <div className={style["header-top"]}>
                 <p>Sign up and get 20% off to your first order. {" "}
-                    <a href={"#"}>Sign Up Now</a>
+                    <a href="/signup">Sign Up Now</a>
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" className={style["icon-exit"]} width="20" height="20" viewBox="0 0 20 20"
                     fill="none">
@@ -72,7 +72,7 @@ const AppHeader = () => {
                                 fill="black" />
                         </svg>
                     </a>
-                    <a href={"#"}>
+                    <a href="/login">
                         <svg xmlns="http://www.w3.org/2000/svg" className={style["icon-user"]} width="22" height="22"
                             viewBox="0 0 22 22" fill="none">
                             <path
