@@ -5,8 +5,9 @@ const config: sql.config = {
     password: process.env.DB_PASSWORD,
     server: process.env.DB_SERVER as string, // e.g., 'localhost\\SQLEXPRESS' or an IP address
     database: process.env.DB_DATABASE,
+    port: Number(process.env.DB_PORT),
     options: {
-        encrypt: true, // Use true for Azure SQL Database, false for local SQL Server
+        encrypt: false, // Use true for Azure SQL Database, false for local SQL Server
         trustServerCertificate: true // Change to false for production
     }
 };

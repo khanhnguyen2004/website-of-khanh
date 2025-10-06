@@ -1,7 +1,6 @@
 // db.ts (example)
 import sql from 'mssql';
-import config from '@/utils/dbConfig';
-
+import config from '@/lib/dbConfig';
 const pool = new sql.ConnectionPool(config)
     .connect()
     .then(pool => {

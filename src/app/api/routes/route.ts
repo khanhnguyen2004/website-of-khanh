@@ -1,6 +1,6 @@
 // src/app/api/routes/route.ts
 import { NextResponse } from 'next/server';
-import { pool } from '@/utils/db';
+import { pool } from '@/lib/db';
 
 export async function GET() {
     try {

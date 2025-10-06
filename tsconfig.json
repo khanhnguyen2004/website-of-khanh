@@ -32,8 +32,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "src/types/**/*.d.ts",
     ".next/types/**/*.ts",
-    "src/utils/dbConfig.ts"
+    "src/lib/dbConfig.ts"
   ],
   "exclude": [
     "node_modules"

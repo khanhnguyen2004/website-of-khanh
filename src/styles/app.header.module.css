@@ -208,3 +208,51 @@
 .header-bottom .icon a {
     cursor: pointer;
 }
+
+.header-bottom .user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.header-bottom .user-menu:hover .sub-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header-bottom .user-menu .sub-menu {
+    position: absolute;
+    display: flex;
+    top: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity linear 0.15s;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #000000;
+    flex-direction: column;
+    pointer-events: none;
+    max-width: 500px;
+}
+
+.header-bottom .user-menu .sub-menu.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header-bottom .user-menu .sub-menu li {
+    display: block;
+    font-size: 16px;
+}
+
+.header-bottom .user-menu .sub-menu li a {
+    padding: 10px 30px;
+    display: block;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: 'Satoshi', sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.header-bottom .user-menu .sub-menu li a:hover {
+    color: #000000 !important;
+}
