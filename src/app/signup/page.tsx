@@ -67,6 +67,7 @@ const SignUp = () => {
             return;
         }
         if (!validationForm()) {
+            resetForm();
             return;
         }
         const response = await fetch('/api/signup', {

@@ -18,7 +18,6 @@ const LogIn = () => {
             callbackUrl: "/profile"
         });
         if (result?.error) {
-            // alert("Login failed: " + result.error);
             if (!username || !password) {
                 toast.error("Please fill in all fields.");
             }
@@ -28,7 +27,6 @@ const LogIn = () => {
                 setPassword("");
             }
         } else {
-            // alert("Login successful!");
             window.location.href = "/";
         }
     };

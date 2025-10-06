@@ -2,6 +2,9 @@
 import { useSession } from "next-auth/react";
 import style from '@/app/profile/page.module.css';
 import { useEffect, useState } from "react";
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Profile = () => {
     const { data: session, status } = useSession();
     const [formData, setFormData] = useState({
@@ -21,26 +24,75 @@ const Profile = () => {
         }
     }, [session, status]);
     useEffect(() => {
-        if (status === "loading") {
-            return;
-        }
         if (status === "unauthenticated") {
             window.location.href = "/login";
         }
     }, [status]);
     if (status === "loading") {
-        return <div>Loading...</div>;
+        return <div className={style["container"]}>Loading...</div>;
     }
     if (!session?.user) {
         return null;
     }
+    const resetForm = () => {
+        if (session?.user) {
+            setFormData({
+                firstName: session.user.firstName || "",
+                lastName: session.user.lastName || "",
+                email: session.user.email || "",
+                phoneNumber: session.user.phoneNumber || ""
+            });
+        }
+    };
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     }
+    const validationForm = () => {
+        const nameRegex = /^[A-Za-zÀ-ỹ\s]{1,30}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^0\d{9}$/;
+        if (!nameRegex.test(formData.firstName)) {
+            toast.error("First name must contain only letters.");
+            return false;
+        }
+        if (!nameRegex.test(formData.lastName)) {
+            toast.error("Last name must contain only letters.");
+            return false;
+        }
+        if (!emailRegex.test(formData.email)) {
+            toast.error("Invalid email address.");
+            return false;
+        }
+        if (!phoneRegex.test(formData.phoneNumber)) {
+            toast.error("Invalid phone number. Must start with 0 and have 10 digits.");
+            return false;
+        }
+        return true;
+    }
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!validationForm()) {
+            resetForm();
+            return;
+        }
+        const response = await fetch('/api/user/profile/update', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: session.user.username, ...formData })
+        });
+        const result = await response.json();
+        if (!response.ok) {
+            toast.error(result.message);
+            resetForm();
+        }
+        else {
+            toast.success("Information updated successfully.");
+        }
+    };
     return (
         <>
-            <div className="container" style={{ width: "100%", padding: "0 100px" }}>
+            <div className={style["container"]} style={{ width: "100%", padding: "0 100px" }}>
                 <div className={style["profile"]}>
                     <div className={style["img-back"]}>
                         <a href="/">
@@ -56,32 +108,33 @@ const Profile = () => {
                     </div>
                     <div className={style["form-profile"]}>
                         <div className={style["title"]}>Welcome! Update your information</div>
-                        <form action="#" method="POST">
+                        <form onSubmit={handleSubmit}>
                             <div className={style["input-group"]}>
                                 <label htmlFor="username">Username</label>
                                 <input type="text" id="username" name="username" value={session.user.username} placeholder="Choose a username" readOnly disabled />
                             </div>
                             <div className={style["input-group"]}>
                                 <label htmlFor="first-name">First name</label>
-                                <input type="text" id="first-name" name="first-name" value={formData.firstName} onChange={handleChange} placeholder="Enter your first-name" required />
+                                <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Enter your first-name" required />
                             </div>
                             <div className={style["input-group"]}>
                                 <label htmlFor="last-name">Last name</label>
-                                <input type="text" id="last-name" name="last-name" value={formData.lastName} onChange={handleChange} placeholder="Enter your last-name" required />
+                                <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Enter your last-name" required />
                             </div>
                             <div className={style["input-group"]}>
                                 <label htmlFor="email">Email</label>
                                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" required />
                             </div>
                             <div className={style["input-group"]}>
-                                <label htmlFor="phone-number">Number phone</label>
-                                <input type="text" id="phone-number" name="phone-number" value={formData.phoneNumber} onChange={handleChange} placeholder="Enter your phone-number" required />
+                                <label htmlFor="phone-number">Phone number</label>
+                                <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} placeholder="Enter your phone-number" required />
                             </div>
                             <button type="submit" className={style["btn-profile"]}>Update information</button>
                         </form>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 };

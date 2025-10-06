@@ -1,5 +1,5 @@
 import sql from 'mssql';
-import { pool } from '../../../lib/db';
+import { pool } from '../../../../lib/db';
 import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
     const { username, password, firstName, lastName, email, phoneNumber } = await req.json();

@@ -1,5 +1,5 @@
 import sql from 'mssql';
-import { pool } from '../../../lib/db';
+import { pool } from '../../../../lib/db';
 export async function getUserByUsername(username: string, password: string) {
     const connection = await pool;
     const result = await connection.request()

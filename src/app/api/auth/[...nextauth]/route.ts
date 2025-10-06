@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { getUserByUsername } from "@/app/api/login/route";
+import { getUserByUsername } from "@/app/api/user/login/route";
 export const { auth, handlers, signIn, signOut } = NextAuth({
     providers: [
         Credentials({
