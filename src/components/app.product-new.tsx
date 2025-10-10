@@ -1,45 +1,41 @@
 'use client';
 import style from '@/styles/app.product-new.module.css';
+import { Product } from '@/types/products';
 import RenderStars from '@/utils/renderStars';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AppProductNew = () => {
-    const products = [
-        {
-            id: 1,
-            name: "T-shirt with Tape Details",
-            image: "/img/image-7.png",
-            rating: 4.5,
-            priceNew: 120,
-            priceOld: null,
-            discount: null,
-        },
-        {
-            id: 2,
-            name: "Skinny Fit Jeans",
-            image: "/img/image-8.png",
-            rating: 3.5,
-            priceNew: 240,
-            priceOld: 260,
-            discount: "-20%",
-        },
-        {
-            id: 3,
-            name: "Checkered Shirt",
-            image: "/img/image-9.png",
-            rating: 4.5,
-            priceNew: 180,
-            priceOld: null,
-            discount: null,
-        },
-        {
-            id: 4,
-            name: "Sleeve Striped T-shirt",
-            image: "/img/image-10.png",
-            rating: 4.5,
-            priceNew: 130,
-            priceOld: 160,
-            discount: "-30%",
-        },
-    ];
+    // 
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('/api/client/product');
+                if (!response.ok) {
+                    toast.error('Failed to fetch.');
+                }
+                const data = await response.json();
+                setProducts(data);
+            }
+            catch (err) {
+                toast.error(`Error loading products: ${(err)}`);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchProducts();
+    }, []);
+    if (loading) {
+        return <div className={style["loading"]}>Loading products...</div>;
+    }
+
+    if (products.length === 0) {
+        return <div className={style["no-data"]}>No new products yet.</div>;
+    }
     return (
         <>
             <div className={style["product-new-arrivals"]}>
@@ -47,38 +43,47 @@ const AppProductNew = () => {
                     <span>NEW ARRIVALS</span>
                 </div>
                 <div className={style["product"]}>
-                    {products.map((p) => (
+                    {products.slice(0, 4).map((p) => (
                         <div key={p.id} className={style["product-card"]}>
                             <div className={style["img-product"]}>
-                                <a href={"#"}>
-                                    <img src={p.image} alt="" />
-                                </a>
+                                <Link href={"#"}>
+                                    {p.image ? (
+                                        <img src={p.image} alt="" />
+                                    ) : ''}
+                                </Link>
                             </div>
                             <div className={style["name-product"]}>
-                                <a href={"#"}>{p.name}</a>
+                                <Link href={"#"}>{p.name}</Link>
                             </div>
                             <div className={style["review-product"]}>
-                                {RenderStars(p.rating)}
+                                {RenderStars(4.5)}
                                 <div className={style["number-star"]}>
-                                    <span className="">{p.rating}/</span><span className={style["total-star"]}>5</span>
+                                    <span className="">4.5/</span><span className={style["total-star"]}>5</span>
                                 </div>
                             </div>
                             <div className={style["price-product"]}>
-                                <div className={style["price-new"]}><span>${p.priceNew}</span></div>
-                                {p.priceOld && <div className={style["price-old"]}><span>${p.priceOld}</span></div>}
-                                {p.discount && <div className={style["discount"]}><span>{p.discount}</span></div>}
+                                {p.discount && p.discount > 0 ? (
+                                    <>
+                                        <div className={style["price-new"]}><span>${(p.price * (1 - p.discount / 100)).toFixed(2)}</span></div>
+                                        <div className={style["price-old"]}><span>${p.price}</span></div>
+                                        <div className={style["discount"]}><span>-{p.discount}%</span></div>
+                                    </>
+                                ) : (
+                                    <div className={style["price-new"]}><span>${p.price}</span></div>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className={style["view-all"]}>
-                    <a href={"#"}>View All</a>
+                    <Link href={"#"}>View All</Link>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" className={style["line-1"]} width="1240" height="1" viewBox="0 0 1240 1"
                 fill="none">
                 <line x1="-4.37114e-08" y1="0.500122" x2="1240" y2="0.500014" stroke="black" strokeOpacity="0.1" />
             </svg>
+            <ToastContainer />
         </>
     );
 }

@@ -1,5 +1,6 @@
 'use client';
 import style from '@/styles/app.banner.module.css';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 const banners = [
     {
@@ -98,7 +99,7 @@ const AppBanner = () => {
                                     <p>{banner.content}</p>
                                 </div>
                                 <div className={style["btn-shop-now"]}>
-                                    <a href={"#"}>Shop Now</a>
+                                    <Link href={"#"}>Shop Now</Link>
                                 </div>
                                 <div className={style["statistics"]}>
                                     <div className={style["stat-items"]}>

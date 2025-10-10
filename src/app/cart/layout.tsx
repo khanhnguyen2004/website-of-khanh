@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import '@/app/globals.css'
-import AppHeader from "@/components/app.header";
+import '@/app/favicon.ico';
+import "boxicons/css/boxicons.min.css";
 import AppFooter from "@/components/app.footer";
+import AppHeader from "@/components/app.header";
 export const metadata: Metadata = {
-    title: "Profile",
-    description: "",
+    title: "Shopping Cart",
+    description: "View and manage your selected fashion items before checkout.",
 };
 
 export default function RootLayout({

@@ -7,7 +7,8 @@ declare module "next-auth" {
         lastName?: string,
         firstName?: string,
         email?: string,
-        phoneNumber?: string
+        phoneNumber?: string,
+        role?: string
     }
     interface Session {
         user: {
@@ -17,6 +18,7 @@ declare module "next-auth" {
             lastName?: string;
             email?: string;
             phoneNumber?: string;
+            role?: string;
         } & DefaultSession["user"];
     }
 }
@@ -28,5 +30,6 @@ declare module "next-auth/jwt" {
         lastName?: string;
         email?: string;
         phoneNumber?: string;
+        role?: string;
     }
 }

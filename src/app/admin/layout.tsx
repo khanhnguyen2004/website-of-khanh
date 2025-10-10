@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import '@/app/globals.css'
-import AppHeader from "@/components/app.header";
-import AppFooter from "@/components/app.footer";
+import "boxicons/css/boxicons.min.css";
+import "@/app/admin/global.css";
+import { AppHeaderAdmin } from "./components/app.header.admin";
+
 export const metadata: Metadata = {
-    title: "Profile",
+    title: "Admin Page",
     description: "",
 };
-
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -15,14 +15,11 @@ export default function RootLayout({
     return (
         <div className="container">
             <header>
-                <AppHeader />
+                <AppHeaderAdmin />
             </header>
             <main>
                 {children}
             </main>
-            <footer>
-                <AppFooter />
-            </footer>
         </div>
     );
 }

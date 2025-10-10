@@ -21,7 +21,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                     firstName: user.firstName,
                     lastName: user.lastName,
                     email: user.email,
-                    phoneNumber: user.phoneNumber
+                    phoneNumber: user.phoneNumber,
+                    role: user.role
                 }
             },
         }),
@@ -35,6 +36,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 token.lastName = user.lastName;
                 token.email = user.email;
                 token.phoneNumber = user.phoneNumber;
+                token.role = user.role;
             }
             return token;
         },
@@ -46,6 +48,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 session.user.lastName = token.lastName as string;
                 session.user.email = token.email as string;
                 session.user.phoneNumber = token.phoneNumber as string;
+                session.user.role = token.role as string;
             }
             return session;
         },

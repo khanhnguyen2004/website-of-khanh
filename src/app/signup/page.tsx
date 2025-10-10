@@ -1,5 +1,6 @@
 'use client';
 import style from '@/app/signup/page.module.css';
+import Link from 'next/link';
 import { useState } from 'react';
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,8 +25,8 @@ const SignUp = () => {
         setConfirmPassword("");
     }
     const validationForm = () => {
-        const usernameRegex = /^[a-zA-Z0-9_]{5,20}$/;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
+        const usernameRegex = /^[Link-zA-Z0-9_]{5,20}$/;
+        const passwordRegex = /^(?=.*[Link-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
         const nameRegex = /^[A-Za-zÀ-ỹ\s]{1,30}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^0\d{9}$/;
@@ -34,7 +35,7 @@ const SignUp = () => {
             return false;
         }
         if (!passwordRegex.test(password)) {
-            toast.error("Password must be at least 8 characters, include upper/lowercase letters, a number, and a special character.");
+            toast.error("Password must be at least 8 characters, include upper/lowercase letters, Link number, and Link special character.");
             return false;
         }
         if (password !== confirmPassword) {
@@ -89,11 +90,11 @@ const SignUp = () => {
             <div className="container" style={{ width: "100%", maxWidth: "500px" }}>
                 <div className={style["signup"]}>
                     <div className={style["img-back"]}>
-                        <a href="/login">
+                        <Link href="/login">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
                                 <path d="M7.70406 0.454104L0.954061 7.2041C0.849182 7.30862 0.765966 7.43281 0.709186 7.56956C0.652405 7.7063 0.623175 7.85291 0.623175 8.00098C0.623175 8.14904 0.652405 8.29565 0.709186 8.4324C0.765966 8.56915 0.849182 8.69334 0.954061 8.79785L7.70406 15.5479C7.91541 15.7592 8.20205 15.8779 8.50094 15.8779C8.79982 15.8779 9.08647 15.7592 9.29781 15.5479C9.50916 15.3365 9.62789 15.0499 9.62789 14.751C9.62789 14.4521 9.50916 14.1654 9.29781 13.9541L4.46875 9.12504L18.25 9.12504C18.5484 9.12504 18.8345 9.00651 19.0455 8.79554C19.2565 8.58456 19.375 8.29841 19.375 8.00004C19.375 7.70167 19.2565 7.41552 19.0455 7.20455C18.8345 6.99357 18.5484 6.87504 18.25 6.87504L4.46875 6.87504L9.29875 2.04598C9.51009 1.83463 9.62883 1.54799 9.62883 1.2491C9.62883 0.950218 9.51009 0.663574 9.29875 0.45223C9.08741 0.240885 8.80076 0.122151 8.50187 0.122151C8.20299 0.122151 7.91634 0.240885 7.705 0.45223L7.70406 0.454104Z" fill="black" />
                             </svg>
-                        </a>
+                        </Link>
                     </div>
                     <div className={style["img-logo"]}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="159" height="25" viewBox="0 0 159 25" fill="none">
@@ -101,7 +102,7 @@ const SignUp = () => {
                         </svg>
                     </div>
                     <div className={style["form-signup"]}>
-                        <div className={style["title"]}>Welcome! <br />Sign up to your account or create a new one</div>
+                        <div className={style["title"]}>Welcome! <br />Sign up to your account or create Link new one</div>
                         <form onSubmit={handleSubmit} method="POST">
                             <div className={style["input-group"]}>
                                 <label htmlFor="first-name">First name</label>
@@ -121,12 +122,12 @@ const SignUp = () => {
                             </div>
                             <div className={style["input-group"]}>
                                 <label htmlFor="username">Username</label>
-                                <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Choose a username" required />
+                                <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Choose Link username" required />
                             </div>
                             <div className={style["input-group"]}>
                                 <label htmlFor="password">Password</label>
                                 <div className={style["input-wrapper"]}>
-                                    <input type={showPassword ? "text" : "password"} id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Create a password" required />
+                                    <input type={showPassword ? "text" : "password"} id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Create Link password" required />
                                     <span onClick={() => setShowPassword(!showPassword)} className={style["icon-show"]}>
                                         {showPassword ?
                                             (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

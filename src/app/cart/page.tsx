@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
+'use client';
 import style from '@/app/cart/page.module.css';
 import AppCart from "./components/app.cart";
 import AppPay from "./components/app.pay";
-export const metadata: Metadata = {
-    title: "Shopping Cart",
-    description: "View and manage your selected fashion items before checkout.",
-};
+import Link from "next/link";
 const Cart = () => {
     return (
         <div>
@@ -17,7 +14,7 @@ const Cart = () => {
             <div className={style["breadcrumb"]}>
                 <div className={style["left"]}>
                     <div className={style["text"]}>
-                        <a href="/">Home</a>
+                        <Link href="/">Home</Link>
                     </div>
                     <div className={style["icon-greater"]}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
@@ -28,7 +25,7 @@ const Cart = () => {
                     </div>
                 </div>
                 <div className={style["right"]}>
-                    <a href="/cart">Cart</a>
+                    <Link href="/cart">Cart</Link>
                 </div>
             </div>
             <div className={style["title"]}>Your cart</div>

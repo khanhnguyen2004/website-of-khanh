@@ -1,6 +1,7 @@
 'use client';
 import style from '@/styles/app.product-top.module.css';
 import RenderStars from '@/utils/renderStars';
+import Link from 'next/link';
 const AppProductTop = () => {
     const products = [
         {
@@ -50,12 +51,12 @@ const AppProductTop = () => {
                     {products.map((p) => (
                         <div key={p.id} className={style["product-card"]}>
                             <div className={style["img-product"]}>
-                                <a href={"#"}>
+                                <Link href={"#"}>
                                     <img src={p.image} alt="" />
-                                </a>
+                                </Link>
                             </div>
                             <div className={style["name-product"]}>
-                                <a href={"#"}>{p.name}</a>
+                                <Link href={"#"}>{p.name}</Link>
                             </div>
                             <div className={style["review-product"]}>
                                 {RenderStars(p.rating)}
@@ -72,7 +73,7 @@ const AppProductTop = () => {
                     ))}
                 </div>
                 <div className={style["view-all"]}>
-                    <a href={"#"}>View All</a>
+                    <Link href={"#"}>View All</Link>
                 </div>
             </div>
         </>

@@ -1,5 +1,6 @@
 'use client';
 import style from '@/styles/app.footer.module.css';
+import Link from 'next/link';
 const AppFooter = () => {
     return (
         <>
@@ -19,7 +20,7 @@ const AppFooter = () => {
                             <input type="text" placeholder="Enter your email address" />
                         </div>
                         <div className={style["btn-subscribe"]}>
-                            <a href={"#"}>Subscribe to Newsletter</a>
+                            <Link href={"#"}>Subscribe to Newsletter</Link>
                         </div>
                     </div>
                 </div>
@@ -39,23 +40,23 @@ const AppFooter = () => {
                             </p>
                         </div>
                         <div className={style["social-icons"]}>
-                            <a href="/#" className={style["social-btn"]}>
+                            <Link href="/#" className={style["social-btn"]}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10"
                                     fill="none">
                                     <path
                                         d="M11.2071 1.9831C10.7881 2.16933 10.3458 2.28573 9.88023 2.35557C10.3458 2.07622 10.7183 1.63392 10.8812 1.0985C10.4389 1.35457 9.95006 1.5408 9.41465 1.6572C8.99562 1.2149 8.39037 0.935547 7.73856 0.935547C6.48149 0.935547 5.45721 1.95982 5.45721 3.21689C5.45721 3.40312 5.48049 3.56608 5.52705 3.72903C3.64145 3.63591 1.94208 2.72803 0.801411 1.33129C0.615178 1.68048 0.498783 2.05294 0.498783 2.47196C0.498783 3.26345 0.894527 3.96182 1.52306 4.38084C1.1506 4.35756 0.801411 4.26445 0.475504 4.10149V4.12477C0.475504 5.24216 1.26699 6.17333 2.31455 6.38284C2.12831 6.42939 1.9188 6.45267 1.70929 6.45267C1.56962 6.45267 1.40666 6.42939 1.26699 6.40612C1.56962 7.314 2.40766 7.98909 3.40866 7.98909C2.61717 8.59434 1.63945 8.96681 0.56862 8.96681C0.382388 8.96681 0.196156 8.96681 0.0332031 8.94353C1.05748 9.59534 2.24471 9.96781 3.54833 9.96781C7.76184 9.96781 10.0665 6.47595 10.0665 3.44968C10.0665 3.35656 10.0665 3.24017 10.0665 3.14705C10.5088 2.84443 10.9045 2.44868 11.2071 1.9831Z"
                                         fill="black" />
                                 </svg>
-                            </a>
-                            <a href="/#" className={style["social-btn"]}>
+                            </Link>
+                            <Link href="/#" className={style["social-btn"]}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className={style["facebook"]} width="8" height="13"
                                     viewBox="0 0 8 13" fill="none">
                                     <path
                                         d="M2.70873 12.3038V6.75026H0.839844V4.58594H2.70873V2.98981C2.70873 1.13752 3.84005 0.128906 5.49242 0.128906C6.28392 0.128906 6.96418 0.187836 7.16243 0.214175V2.14993L6.01642 2.15045C5.11776 2.15045 4.94376 2.57748 4.94376 3.20411V4.58594H7.08697L6.80791 6.75026H4.94376V12.3038H2.70873Z"
                                         fill="white" />
                                 </svg>
-                            </a>
-                            <a href="/#" className={style["social-btn"]}>
+                            </Link>
+                            <Link href="/#" className={style["social-btn"]}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
                                     fill="none">
                                     <path
@@ -68,52 +69,52 @@ const AppFooter = () => {
                                         d="M10.6176 4.19807C11.0665 4.19807 11.4305 3.83412 11.4305 3.38517C11.4305 2.93621 11.0665 2.57227 10.6176 2.57227C10.1686 2.57227 9.80469 2.93621 9.80469 3.38517C9.80469 3.83412 10.1686 4.19807 10.6176 4.19807Z"
                                         fill="black" />
                                 </svg>
-                            </a>
-                            <a href="/#" className={style["social-btn"]}>
+                            </Link>
+                            <Link href="/#" className={style["social-btn"]}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13"
                                     fill="none">
                                     <path fillRule="evenodd" clipRule="evenodd"
                                         d="M6.60685 0.226562C3.01591 0.226562 0.126953 3.11552 0.126953 6.70646C0.126953 9.56841 1.98992 11.9984 4.55488 12.8624C4.87888 12.9164 4.98688 12.7274 4.98688 12.5384C4.98688 12.3764 4.98688 11.9714 4.98688 11.4314C3.1779 11.8364 2.79991 10.5674 2.79991 10.5674C2.50291 9.81141 2.07092 9.62241 2.07092 9.62241C1.47693 9.21742 2.12492 9.21742 2.12492 9.21742C2.77291 9.27142 3.1239 9.89241 3.1239 9.89241C3.6909 10.8914 4.63588 10.5944 5.01387 10.4324C5.06787 10.0004 5.22987 9.73041 5.41887 9.56841C3.98789 9.40642 2.47592 8.83942 2.47592 6.35546C2.47592 5.65347 2.71891 5.05948 3.1509 4.62749C3.09691 4.46549 2.85391 3.8175 3.2049 2.89952C3.2049 2.89952 3.74489 2.73752 4.98688 3.57451C5.49987 3.43951 6.06686 3.35851 6.60685 3.35851C7.14684 3.35851 7.71383 3.43951 8.22682 3.57451C9.4688 2.73752 10.0088 2.89952 10.0088 2.89952C10.3598 3.79051 10.1438 4.43849 10.0628 4.62749C10.4678 5.08648 10.7378 5.65347 10.7378 6.35546C10.7378 8.83942 9.22581 9.37942 7.76783 9.54141C8.01083 9.73041 8.19982 10.1354 8.19982 10.7294C8.19982 11.5934 8.19982 12.2954 8.19982 12.5114C8.19982 12.6734 8.30782 12.8894 8.65882 12.8354C11.2238 11.9984 13.0867 9.56841 13.0867 6.70646C13.0867 3.11552 10.1978 0.226562 6.60685 0.226562Z"
                                         fill="black" />
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className={style["footer-menus"]}>
                         <div className={style["menu"]}>
                             <div className={style["title"]}>COMPANY</div>
                             <ul className="">
-                                <li><a href={"#"}>About</a></li>
-                                <li><a href={"#"}>Features</a></li>
-                                <li><a href={"#"}>Works</a></li>
-                                <li><a href={"#"}>Career</a></li>
+                                <li><Link href={"#"}>About</Link></li>
+                                <li><Link href={"#"}>Features</Link></li>
+                                <li><Link href={"#"}>Works</Link></li>
+                                <li><Link href={"#"}>Career</Link></li>
                             </ul>
                         </div>
                         <div className={style["menu"]}>
                             <div className={style["title"]}>HELP</div>
                             <ul className="">
-                                <li><a href={"#"}>Customer Support</a></li>
-                                <li><a href={"#"}>Delivery Details</a></li>
-                                <li><a href={"#"}>Terms &amp; Conditions</a></li>
-                                <li><a href={"#"}>Privacy Policy</a></li>
+                                <li><Link href={"#"}>Customer Support</Link></li>
+                                <li><Link href={"#"}>Delivery Details</Link></li>
+                                <li><Link href={"#"}>Terms &amp; Conditions</Link></li>
+                                <li><Link href={"#"}>Privacy Policy</Link></li>
                             </ul>
                         </div>
                         <div className={style["menu"]}>
                             <div className={style["title"]}>FAQ</div>
                             <ul className="">
-                                <li><a href={"#"}>Account</a></li>
-                                <li><a href={"#"}>Manage Deliveries</a></li>
-                                <li><a href={"#"}>Orders</a></li>
-                                <li><a href={"#"}>Payments</a></li>
+                                <li><Link href={"#"}>Account</Link></li>
+                                <li><Link href={"#"}>Manage Deliveries</Link></li>
+                                <li><Link href={"#"}>Orders</Link></li>
+                                <li><Link href={"#"}>Payments</Link></li>
                             </ul>
                         </div>
                         <div className={style["menu"]}>
                             <div className={style["title"]}>RESOURCES</div>
                             <ul className="">
-                                <li><a href={"#"}>Free eBooks</a></li>
-                                <li><a href={"#"}>Development Tutorial</a></li>
-                                <li><a href={"#"}>How to - Blog</a></li>
-                                <li><a href={"#"}>Youtube Playlist</a></li>
+                                <li><Link href={"#"}>Free eBooks</Link></li>
+                                <li><Link href={"#"}>Development Tutorial</Link></li>
+                                <li><Link href={"#"}>How to - Blog</Link></li>
+                                <li><Link href={"#"}>Youtube Playlist</Link></li>
                             </ul>
                         </div>
                     </div>
