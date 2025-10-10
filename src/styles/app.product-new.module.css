@@ -59,6 +59,11 @@
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 295px;
+    display: block;
 }
 
 .product-new-arrivals .product .name-product a {

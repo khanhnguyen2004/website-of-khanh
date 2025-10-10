@@ -19,6 +19,11 @@ export default function ProductPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [editing, setEditing] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(product.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentProducts = product.slice(startIndex, startIndex + itemsPerPage);
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -176,7 +181,7 @@ export default function ProductPage() {
                     </tr>
                 </thead>
                 <tbody>
-                    {product.length > 0 ? (product.map((p) => (
+                    {currentProducts.length > 0 ? (currentProducts.map((p) => (
                         <tr key={p.id}>
                             <td>{p.id}</td>
                             <td>{p.image ? <img src={p.image} alt={p.name} className={style["product-img"]} /> : <span>No image</span>}</td>
@@ -228,6 +233,15 @@ export default function ProductPage() {
                     </div>
                 </div >
             )}
+            <div className={style["pagination"]}>
+                <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+                    ← Prev
+                </button>
+                <span>Page {currentPage} of {totalPages}</span>
+                <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
+                    Next →
+                </button>
+            </div>
             <ToastContainer />
         </div >
     );

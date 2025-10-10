@@ -46,7 +46,7 @@ const AppProductNew = () => {
                     {products.slice(0, 4).map((p) => (
                         <div key={p.id} className={style["product-card"]}>
                             <div className={style["img-product"]}>
-                                <Link href={"#"}>
+                                <Link href={""}>
                                     {p.image ? (
                                         <img src={p.image} alt="" />
                                     ) : ''}
