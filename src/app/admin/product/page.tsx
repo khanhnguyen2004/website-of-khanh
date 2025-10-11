@@ -20,7 +20,7 @@ export default function ProductPage() {
     const [error, setError] = useState<string | null>(null);
     const [editing, setEditing] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5;
+    const itemsPerPage = 4;
     const totalPages = Math.ceil(product.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentProducts = product.slice(startIndex, startIndex + itemsPerPage);

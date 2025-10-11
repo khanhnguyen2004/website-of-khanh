@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .header-left .left-top ul {
@@ -102,7 +102,6 @@
 }
 
 .left-bottom {
-    margin-bottom: 16px;
     display: flex;
     margin-top: auto;
 }

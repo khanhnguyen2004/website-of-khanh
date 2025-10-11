@@ -7,7 +7,6 @@ export const AppHeaderAdmin = () => {
     const { data: session, status } = useSession();
     return (
         <div className={style["header-admin"]}>
-            <div className=""></div>
             <nav className={style["nav"]}>
                 <div className={style["header-left"]}>
                     <div className={style["left-top"]}>
