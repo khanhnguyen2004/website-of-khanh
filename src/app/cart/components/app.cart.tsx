@@ -21,7 +21,7 @@ const AppCart = () => {
                             <div className={style["product"]}>
                                 <div className={style["img-product"]}>
                                     <Link href={"#"}>
-                                        <img className={style["image"]} src={product.img} />
+                                        <img className={style["image"]} alt={product.name} src={product.img} />
                                     </Link>
                                 </div>
                                 <div className={style["right"]}>

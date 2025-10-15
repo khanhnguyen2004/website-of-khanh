@@ -44,7 +44,7 @@ const LogIn = () => {
     };
     return (
         <>
-            <div className="container" style={{ width: "100%", maxWidth: "500px" }}>
+            <div className={style["container-login"]} style={{ width: "100%", maxWidth: "500px" }}>
                 <div className={style["login"]}>
                     <div className={style["img-back"]}>
                         <Link href="/">

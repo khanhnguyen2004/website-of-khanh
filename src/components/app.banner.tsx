@@ -8,18 +8,21 @@ const banners = [
         content:
             "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
         image: "/img/rectangle-2.png",
+        imageMobile: "/img/rectangle-2-small.png",
     },
     {
         title: "EXPLORE THE LATEST TRENDS",
         content:
             "Stay ahead of fashion with our new arrivals, carefully selected for every occasion.",
         image: "/img/rectangle-2.png",
+        imageMobile: "/img/rectangle-2-small.png",
     },
     {
         title: "QUALITY AND COMFORT GUARANTEED",
         content:
             "Discover premium fabrics and timeless designs made for your lifestyle.",
         image: "/img/rectangle-2.png",
+        imageMobile: "/img/rectangle-2-small.png",
     }
 ];
 const AppBanner = () => {
@@ -85,6 +88,7 @@ const AppBanner = () => {
         setCurrentIndex(index + 1);
         setIsTransitioning(true);
     };
+
     return (
         <>
             <div className={style["slide-show"]}>
@@ -128,7 +132,10 @@ const AppBanner = () => {
                             </div>
                             <div className={style["right"]}>
                                 <div className={style["img-banner"]}>
-                                    <img src={banner.image} alt="" />
+                                    <picture>
+                                        <source media="(max-width: 768px)" srcSet={banner.imageMobile} />
+                                        <img src={banner.image} alt={banner.title} />
+                                    </picture>
                                 </div>
                                 <div className={style["icon-star-banner"]}>
                                     <svg xmlns="http://www.w3.org/2000/svg" className={style["star-big"]} width="104" height="104"

@@ -1,3 +1,7 @@
+.container-login {
+    margin: 0 auto;
+}
+
 .login {
     display: flex;
     flex-direction: column;
@@ -144,4 +148,56 @@
 .login .form-login .sign-up-link:hover a {
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .container-login {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .login {
+        padding: 20px 20px;
+        margin: 20px;
+        max-width: 350px;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .login .title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .login .img-back {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .login form,
+    .login .form-login {
+        gap: 12px;
+    }
+
+    .login .input-wrapper input,
+    .login form input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .login .input-wrapper .icon-show {
+        right: 8px;
+    }
+
+    .login form button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .login .form-login .sign-up-link {
+        font-size: 14px;
+    }
 }

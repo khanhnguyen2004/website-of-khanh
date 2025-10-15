@@ -5,7 +5,7 @@ import AppPay from "./components/app.pay";
 import Link from "next/link";
 const Cart = () => {
     return (
-        <div>
+        <div className={style["cart-page"]}>
             <svg xmlns="http://www.w3.org/2000/svg" className={style["line"]} width="1240" height="1" viewBox="0 0 1240 1"
                 fill="none">
                 <line x1="-4.37114e-08" y1="0.500122" x2="1240" y2="0.500014" stroke="black" strokeOpacity="0.1">

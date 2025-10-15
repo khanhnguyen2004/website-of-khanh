@@ -12,13 +12,13 @@ const AppCategory = () => {
                             <div className={`${style.category} ${style.small}`}>
                                 <Link href={"#"}>
                                     <span>Casual</span>
-                                    <img src="/img/image-11.png" style={{ top: "2px" }} alt="" />
+                                    <img src="/img/image-11.png" style={{ top: "2px" }} alt="Casual" />
                                 </Link>
                             </div>
                             <div className={`${style.category} ${style.large}`}>
                                 <Link href={"#"}>
                                     <span>Formal</span>
-                                    <img src="/img/image-13.png" style={{ top: "2px" }} alt="" />
+                                    <img src="/img/image-13.png" style={{ top: "2px" }} alt="Formal" />
                                 </Link>
                             </div>
                         </div>
@@ -26,13 +26,13 @@ const AppCategory = () => {
                             <div className={`${style.category} ${style.large}`}>
                                 <Link href={"#"}>
                                     <span>Party</span>
-                                    <img src="/img/image-12.png" alt="" />
+                                    <img src="/img/image-12.png" alt="Party" />
                                 </Link>
                             </div>
                             <div className={`${style.category} ${style.small}`}>
                                 <Link href={"#"}>
                                     <span>Gym</span>
-                                    <img src="/img/image-14.png" alt="" />
+                                    <img src="/img/image-14.png" alt="Gym" />
                                 </Link>
                             </div>
                         </div>

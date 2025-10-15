@@ -75,3 +75,48 @@
     border-bottom: 1px solid #eee;
     font-size: 15px;
 }
+
+@media (max-width: 768px) {
+    .content {
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content h1 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .cards {
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 16px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+    }
+
+    .section ul li {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+}

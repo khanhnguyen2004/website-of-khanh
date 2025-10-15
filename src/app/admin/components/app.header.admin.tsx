@@ -5,9 +5,16 @@ import Link from 'next/link';
 import { useState } from 'react';
 export const AppHeaderAdmin = () => {
     const { data: session, status } = useSession();
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(null);
+    const toggleNav = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div className={style["header-admin"]}>
-            <nav className={style["nav"]}>
+            <button className={`${style.hamburger}`} onClick={toggleNav}>☰</button>
+            <div className={`${style.overlay} ${isOpen ? style.open : ''}`} onClick={toggleNav}></div>
+            <nav className={`${style["nav"]} ${isOpen ? style.open : style.hidden}`}>
                 <div className={style["header-left"]}>
                     <div className={style["left-top"]}>
                         <ul>

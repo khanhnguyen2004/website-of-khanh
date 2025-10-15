@@ -34,7 +34,7 @@ const Profile = () => {
     }
     return (
         <>
-            <div className={style["container"]} style={{ width: "100%", padding: "0 100px" }}>
+            <div className={style["container"]} style={{ width: "100%" }}>
                 <div className={style["profile"]}>
                     <div className={style["form-profile"]}>
                         <div className={style["title"]}>Your information</div>

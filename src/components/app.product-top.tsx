@@ -52,7 +52,7 @@ const AppProductTop = () => {
                         <div key={p.id} className={style["product-card"]}>
                             <div className={style["img-product"]}>
                                 <Link href={"#"}>
-                                    <img src={p.image} alt="" />
+                                    <img src={p.image} alt={p.name} />
                                 </Link>
                             </div>
                             <div className={style["name-product"]}>

@@ -54,6 +54,10 @@
     margin: 24px 0;
 }
 
+.header-bottom .hamburger {
+    display: none;
+    cursor: pointer;
+}
 
 .header-bottom .logo svg {
     width: 160px;
@@ -63,6 +67,11 @@
 
 .header-bottom .logo a {
     cursor: pointer;
+}
+
+.header-bottom .menu {
+    max-width: 322px;
+    width: 100%;
 }
 
 .header-bottom .menu .main-menu {
@@ -144,11 +153,17 @@
     width: 100%;
 }
 
+.header-bottom .icon-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 680px;
+    width: 100%;
+}
+
 .header-bottom .search {
     max-width: 577px;
     max-height: 48px;
-    width: 100%;
-    height: 100%;
     background-color: #f0f0f0;
     border-radius: 62px;
     position: relative;
@@ -255,4 +270,236 @@
 
 .header-bottom .user-menu .sub-menu li a:hover {
     color: #000000 !important;
+}
+
+.drawer {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .header-top {
+        padding: 0 40px;
+        font-size: 13px;
+    }
+
+    .header-bottom {
+        padding: 0 40px;
+        gap: 20px;
+        margin: 16px 0;
+        justify-content: space-between;
+    }
+
+    .header-bottom .menu .main-menu {
+        gap: 16px;
+    }
+
+    .header-bottom .search {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        padding: 0 16px;
+        font-size: 12px;
+        height: 34px;
+    }
+
+    .header-top p,
+    .header-top a {
+        font-size: 12px;
+    }
+
+    .header-bottom {
+        padding: 0 16px;
+        gap: 16px;
+        margin: 12px 0;
+        justify-content: space-between;
+    }
+
+    .header-bottom .logo svg {
+        width: 120px;
+        height: 20px;
+    }
+
+    .header-bottom .search .icon-search path {
+        fill-opacity: 1;
+    }
+
+    .header-bottom .menu nav {
+        display: none;
+    }
+
+    .header-bottom .icon {
+        gap: 10px;
+    }
+
+    .header-bottom .search {
+        background: none;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 0;
+    }
+
+    .header-bottom .search input {
+        display: none;
+    }
+
+    .header-bottom .search .icon-search {
+        width: 22px;
+        height: 22px;
+    }
+
+    .header-bottom .menu.active {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #000000;
+        flex-direction: column;
+        padding: 16px 0;
+        z-index: 999;
+    }
+
+    .header-bottom .menu.active .main-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-bottom .menu.active .main-menu a {
+        color: #ffffff;
+        padding: 10px 20px;
+    }
+
+    .sub-menu {
+        position: static;
+        box-shadow: none;
+    }
+
+    .sub-menu li a {
+        padding: 8px 20px;
+    }
+
+    .header-bottom .hamburger {
+        display: block;
+    }
+
+    .header-bottom .icon-group {
+        gap: 12px;
+        justify-content: flex-end;
+    }
+
+    .drawer .icon-exit path {
+        fill: #000000;
+    }
+
+    .drawer.show {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+    }
+
+    .drawer-content {
+        background: #fff;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        padding: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: slideIn 0.3s ease;
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .drawer-header svg {
+        border: none;
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .drawer-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .drawer-content a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        font-family: 'Satoshi', sans-serif;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .drawer .main-menu .sub-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .drawer .sub-menu.show {
+        display: block;
+        max-height: 200px;
+    }
+
+    .drawer .sub-menu li a {
+        padding: 8px 0 8px 20px;
+        color: #555555 !important;
+        font-size: 16px;
+    }
+
+    .drawer .sub-menu li a:hover {
+        background: none;
+        color: #000000 !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-top p,
+    .header-top a {
+        font-size: 11px;
+    }
+
+    .header-bottom {
+        gap: 8px;
+    }
+
+    .header-bottom .logo svg {
+        width: 100px;
+    }
+
+    .header-bottom .icon svg {
+        width: 20px;
+        height: 20px;
+    }
 }

@@ -1,3 +1,7 @@
+.container-signup {
+    margin: 0 auto;
+}
+
 .signup {
     display: flex;
     flex-direction: column;
@@ -111,4 +115,50 @@
 
 .signup form button:hover {
     background-color: #333333;
+}
+
+@media (max-width: 768px) {
+    .container-signup {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .signup {
+        padding: 20px 20px;
+        margin: 20px 0;
+        max-width: 350px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .signup .title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .signup .img-back {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .signup .form-signup,
+    .signup form {
+        gap: 12px;
+    }
+
+    .signup .input-wrapper input,
+    .signup form input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .signup .input-wrapper .icon-show {
+        right: 8px;
+    }
+
+    .signup form button {
+        padding: 8px;
+        font-size: 13px;
+    }
 }

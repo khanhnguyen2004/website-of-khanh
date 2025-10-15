@@ -87,7 +87,7 @@ const SignUp = () => {
     };
     return (
         <>
-            <div className="container" style={{ width: "100%", maxWidth: "500px" }}>
+            <div className={style["container-signup"]} style={{ width: "100%", maxWidth: "500px" }}>
                 <div className={style["signup"]}>
                     <div className={style["img-back"]}>
                         <Link href="/login">

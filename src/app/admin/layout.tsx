@@ -5,7 +5,7 @@ import { AppHeaderAdmin } from "./components/app.header.admin";
 
 export const metadata: Metadata = {
     title: "Admin Page",
-    description: "",
+    description: "Admin Page for managing the e-commerce platform.",
 };
 export default function RootLayout({
     children,

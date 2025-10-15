@@ -247,3 +247,62 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .right-cart {
+        padding: 20px;
+    }
+
+    .right-cart .title-pay {
+        font-size: 20px;
+        max-height: 27px;
+    }
+
+    .right-cart .info-pay .info-pay-child .title-pay {
+        font-size: 16px;
+    }
+
+    .right-cart .info-pay .info-pay-child .number-pay {
+        font-size: 16px;
+    }
+
+    .right-cart .info-pay .info-pay-child .total {
+        font-size: 16px;
+    }
+
+    .right-cart .info-pay .info-pay-child .number-total {
+        font-size: 20px;
+    }
+
+    .right-cart .discount .discount-child {
+        padding: 12px;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .right-cart .discount .discount-child .icon-discount {
+        width: 20px;
+        height: 20px;
+    }
+
+    .right-cart .discount .discount-child .input-discount {
+        font-size: 14px;
+    }
+
+    .right-cart .discount .btn-apply div {
+        font-size: 14px;
+    }
+
+    .right-cart .btn-check-out {
+        height: 54px;
+    }
+
+    .right-cart .btn-check-out div {
+        font-size: 14px;
+    }
+
+    .right-cart .btn-check-out .arrow-down-bold {
+        width: 20px;
+        height: 20px;
+    }
+}

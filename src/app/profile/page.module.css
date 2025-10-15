@@ -1,3 +1,7 @@
+.container-profile {
+    padding: 0 100px;
+}
+
 .profile {
     display: flex;
     flex-direction: column;
@@ -112,4 +116,41 @@
 
 .profile form button:hover {
     background-color: #333333;
+}
+
+@media (max-width: 768px) {
+    .container-profile {
+        padding: 0 16px;
+    }
+
+    .profile {
+        padding: 30px 30px;
+        margin: 30px 0;
+        max-width: 100%;
+    }
+
+    .profile .title {
+        font-size: 20px;
+    }
+
+    .profile .img-back {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .profile .form-profile,
+    .profile form {
+        gap: 16px;
+    }
+
+    .profile .input-wrapper input,
+    .profile form input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .profile form button {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

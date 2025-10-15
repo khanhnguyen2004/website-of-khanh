@@ -69,8 +69,6 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -78,4 +76,13 @@ main {
     flex-direction: column;
     flex: 1;
     margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        box-shadow: none;
+        max-width: 50px;
+        width: 100%;
+    }
 }
