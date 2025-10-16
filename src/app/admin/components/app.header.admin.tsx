@@ -10,6 +10,9 @@ export const AppHeaderAdmin = () => {
     const toggleNav = () => {
         setIsOpen(!isOpen);
     };
+    if (!session?.user || session.user.role !== "admin") {
+        return null;
+    }
     return (
         <div className={style["header-admin"]}>
             <button className={`${style.hamburger}`} onClick={toggleNav}>☰</button>

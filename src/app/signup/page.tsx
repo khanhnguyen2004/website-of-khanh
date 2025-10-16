@@ -25,8 +25,8 @@ const SignUp = () => {
         setConfirmPassword("");
     }
     const validationForm = () => {
-        const usernameRegex = /^[Link-zA-Z0-9_]{5,20}$/;
-        const passwordRegex = /^(?=.*[Link-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
+        const usernameRegex = /^[a-zA-Z0-9_]{5,20}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
         const nameRegex = /^[A-Za-zÀ-ỹ\s]{1,30}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^0\d{9}$/;
@@ -35,7 +35,7 @@ const SignUp = () => {
             return false;
         }
         if (!passwordRegex.test(password)) {
-            toast.error("Password must be at least 8 characters, include upper/lowercase letters, Link number, and Link special character.");
+            toast.error("Password must be at least 8 characters, include at least one lowercase letter, one number, and one special character.");
             return false;
         }
         if (password !== confirmPassword) {
@@ -71,7 +71,7 @@ const SignUp = () => {
             resetForm();
             return;
         }
-        const response = await fetch('/api/signup', {
+        const response = await fetch('/api/user/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, password, firstName, lastName, phoneNumber })

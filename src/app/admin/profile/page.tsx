@@ -21,11 +21,6 @@ const Profile = () => {
             })
         }
     }, [session, status]);
-    useEffect(() => {
-        if (status === "unauthenticated") {
-            window.location.href = "/login";
-        }
-    }, [status]);
     if (status === "loading") {
         return <div className={style["container"]}>Loading...</div>;
     }

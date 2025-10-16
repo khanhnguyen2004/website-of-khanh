@@ -52,6 +52,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
             }
             return session;
         },
+        authorized({ auth }) {
+            return !!auth;
+        },
     },
     pages: {
         signIn: '/login',

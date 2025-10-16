@@ -9,12 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@auth/core": "^0.41.0",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.8",
     "boxicons": "^2.1.4",
     "mssql": "^12.0.0",
     "next": "15.5.4",
-    "next-auth": "5.0.0-beta.20",
+    "next-auth": "^5.0.0-beta.20",
     "node-stream": "^1.7.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.10",
