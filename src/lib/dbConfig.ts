@@ -1,15 +1,14 @@
 // dbConfig.ts (example)
-import sql from 'mssql';
-const config: sql.config = {
+import mysql from 'mysql2/promise';
+const config = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER as string, // e.g., 'localhost\\SQLEXPRESS' or an IP address
+    host: process.env.DB_SERVER as string,
     database: process.env.DB_DATABASE,
     port: Number(process.env.DB_PORT),
-    options: {
-        encrypt: false, // Use true for Azure SQL Database, false for local SQL Server
-        trustServerCertificate: true // Change to false for production
-    }
-};
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+})
 
 export default config;

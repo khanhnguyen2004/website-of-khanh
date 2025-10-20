@@ -3,7 +3,7 @@ export interface Product {
     name: string;
     price: number;
     discount: number;
-    image: string;
+    image: string | null;
     created_at: string;
 }
 export interface ProductForm {

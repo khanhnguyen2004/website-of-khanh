@@ -1,22 +1,23 @@
 import { NextResponse } from 'next/server';
-import { pool } from '@/lib/db';
-import sql from 'mssql';
+import { config } from '@/lib/db';
+import { Product } from '@/types/products';
 
 export async function GET() {
     try {
-        const connection = await pool;
-        const result = await connection.request()
-            .query(`SELECT * FROM products ORDER BY created_at DESC`);
-        const products = result.recordset.map((row: any) => ({
+        const connection = await config;
+        const [product] = await connection.execute(`SELECT * FROM products ORDER BY created_at DESC`);
+        const productResult = product as Product[];
+        const products = productResult.map(row => ({
             id: row.id,
             name: row.name,
-            price: parseFloat(row.price),
-            discount: parseInt(row.discount),
+            price: row.price,
+            discount: row.discount,
             image: row.image || '',
-            created_at: row.created_at.toISOString(),
+            created_at: row.created_at,
         }));
         return NextResponse.json(products);
-    } catch (err: any) {
-        return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        return NextResponse.json({ success: false, error: message }, { status: 500 });
     }
 }

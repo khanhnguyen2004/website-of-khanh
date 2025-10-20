@@ -5,6 +5,7 @@ export interface Users {
     role: string
 }
 export interface InfoUsers {
+    username: string;
     id: number;
     firstName?: string;
     lastName?: string;
@@ -13,6 +14,7 @@ export interface InfoUsers {
     idUser: number;
 }
 export interface InfoAdmin {
+    username: string;
     id: number;
     firstName?: string;
     lastName?: string;

@@ -1,38 +1,38 @@
 import { NextResponse } from 'next/server';
-import { pool } from '@/lib/db';
-import sql from 'mssql';
+import { config } from '@/lib/db';
+import { Product } from '@/types/products';
 
 export async function GET(request: Request) {
     try {
-        const connection = await pool;
-        const result = await connection.request()
-            .query(`SELECT * FROM products ORDER BY id ASC`);
-        const products = result.recordset.map((row: any) => ({
+        const connection = await config;
+        const [product] = await connection.execute(`SELECT * FROM products ORDER BY id ASC`);
+
+        const productResult = product as Product[];
+        const products = productResult.map(row => ({
             id: row.id,
             name: row.name,
-            price: parseFloat(row.price),
-            discount: parseInt(row.discount),
+            price: row.price,
+            discount: row.discount,
             image: row.image || '',
-            created_at: row.created_at.toISOString(),
+            created_at: row.created_at,
         }));
         return NextResponse.json(products);
-    } catch (err: any) {
-        return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        return NextResponse.json({ success: false, error: message }, { status: 500 });
     }
 }
 export async function POST(request: Request) {
     try {
         const { name, price, discount, image } = await request.json();
-        const connection = await pool;
-        const result = await connection.request()
-            .input('name', sql.NVarChar(100), name)
-            .input('price', sql.Decimal(18, 2), price)
-            .input('discount', sql.Int, discount || 0)
-            .input('image', sql.NVarChar(255), image)
-            .query(`INSERT INTO products (name, price, discount, image) OUTPUT INSERTED.id VALUES (@name, @price, @discount, @image)`);
-        const newId = result.recordset[0].id;
+        const connection = await config;
+        const [product] = await connection.execute(`INSERT INTO products (name, price, discount, image) OUTPUT INSERTED.id VALUES (?, ?, ?, ?)`, [name, price, discount, image]);
+
+        const productResult = product as Product[];
+        const newId = productResult[0].id;
         return NextResponse.json({ success: true, id: newId });
-    } catch (err: any) {
-        return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        return NextResponse.json({ success: false, error: message }, { status: 500 });
     }
 }

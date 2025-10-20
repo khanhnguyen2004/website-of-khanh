@@ -88,7 +88,7 @@ const LogIn = () => {
                             <button type="submit" className={style["btn-login"]}>Log In</button>
                         </form>
                         <div className={style["sign-up-link"]}>
-                            <span>Don't have an account? <Link href="/signup">Sign Up</Link></span>
+                            <span>Don&apos;t have an account? <Link href="/signup">Sign Up</Link></span>
                         </div>
                     </div>
                 </div>

@@ -1,18 +1,6 @@
 // db.ts (example)
-import sql from 'mssql';
+import mysql from 'mysql2/promise';
 import config from '@/lib/dbConfig';
-const pool = new sql.ConnectionPool(config)
-    .connect()
-    .then(pool => {
-        console.log('Database Connected!');
-        return pool;
-    })
-    .catch(err => {
-        console.error('Database Connection Failed!', err);
-        throw err;
-    });
-
 export {
-    sql,
-    pool
+    config
 };

@@ -1,5 +1,5 @@
+import { auth } from "@/auth";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "./src/app/api/auth/[...nextauth]/route";
 export async function middleware(req: NextRequest) {
     const session = await auth();
     const pathname = req.nextUrl.pathname;

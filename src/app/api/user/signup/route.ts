@@ -1,38 +1,33 @@
 import sql from 'mssql';
-import { pool } from '../../../../lib/db';
+import { config } from '../../../../lib/db';
 import { NextResponse } from 'next/server';
+import { InfoUsers, Users } from '@/types/users';
 export async function POST(req: Request) {
     const { username, password, firstName, lastName, email, phoneNumber } = await req.json();
-    const connection = await pool;
-    const checkUser = await connection.request()
-        .input('username', sql.NVarChar(20), username)
-        .query(`SELECT * FROM users WHERE username = @username`);
-    if (checkUser.recordset.length > 0) {
+    const connection = await config;
+    const [checkUser] = await connection.execute(`SELECT * FROM users WHERE username = ?`, [username]);
+
+    const checkUserResult = checkUser as Users[];
+    if (checkUserResult.length > 0) {
         return NextResponse.json({ message: "Username already exists." }, { status: 400 });
     }
-    const checkEmail = await connection.request()
-        .input('email', sql.NVarChar(255), email)
-        .query('SELECT * FROM infoUsers WHERE email = @email');
-    if (checkEmail.recordset.length > 0) {
+    const [checkEmail] = await connection.execute('SELECT * FROM infoUsers WHERE email = ?', [email]);
+
+    const checkEmailResult = checkEmail as InfoUsers[];
+    if (checkEmailResult.length > 0) {
         return NextResponse.json({ message: "Email already exists." }, { status: 400 });
     }
-    const checkPhoneNumber = await connection.request()
-        .input('phoneNumber', sql.NVarChar(10), phoneNumber)
-        .query('SELECT * FROM infoUsers WHERE phoneNumber = @phoneNumber');
-    if (checkPhoneNumber.recordset.length > 0) {
+    const [checkPhoneNumber] = await connection.execute('SELECT * FROM infoUsers WHERE phoneNumber = ?', [phoneNumber]);
+
+    const checkPhoneNumberResult = checkPhoneNumber as InfoUsers[];
+    if (checkPhoneNumberResult.length > 0) {
         return NextResponse.json({ message: "Phone number already exists." }, { status: 400 });
     }
-    const resultUser = await connection.request()
-        .input('username', sql.NVarChar(20), username)
-        .input('password', sql.NVarChar(20), password)
-        .query(`INSERT INTO users (username, password) OUTPUT INSERTED.id VALUES (@username, @password)`);
-    const userId = resultUser.recordset ? resultUser.recordset[0].id : null;
-    await connection.request()
-        .input('firstName', sql.NVarChar(30), firstName)
-        .input('lastName', sql.NVarChar(30), lastName)
-        .input('email', sql.NVarChar(255), email)
-        .input('phoneNumber', sql.NVarChar(10), phoneNumber)
-        .input('idUser', sql.Int, userId)
-        .query(`INSERT INTO infoUsers (firstName, lastName, email, phoneNumber, idUser) VALUES (@firstName, @lastName, @email, @phoneNumber, @idUser)`);
+    const [users] = await connection.execute(`INSERT INTO users (username, password) OUTPUT INSERTED.id VALUES (?, ?)`, [username, password]);
+
+    const userResult = users as Users[];
+    const userId = userResult ? userResult[0].id : null;
+    await connection.execute(`INSERT INTO infoUsers (firstName, lastName, email, phoneNumber, idUser) VALUES (?, ?, ?, ?, ?)`, [firstName, lastName, email, phoneNumber, userId]);
+
     return NextResponse.json({ message: "User created successfully." }, { status: 201 });
 }

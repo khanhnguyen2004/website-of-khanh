@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server';
-import { pool } from '@/lib/db';
-import sql from 'mssql';
+import { config } from '@/lib/db';
+import { InfoAdmin } from '@/types/users';
 
 export async function GET(request: Request) {
     try {
-        const connection = await pool;
-        const result = await connection.request()
-            .query(`SELECT u.username, ia.* FROM infoAdmin ia JOIN users u ON ia.idUser=u.id WHERE u.role IN ('admin') ORDER BY ia.id ASC`);
-        const employees = result.recordset.map((row: any) => ({
+        const connection = await config;
+        const [employee] = await connection.execute(`SELECT u.username, ia.* FROM infoAdmin ia JOIN users u ON ia.idUser=u.id WHERE u.role IN ('admin') ORDER BY ia.id ASC`);
+
+        const employeeResult = employee as InfoAdmin[];
+        const employees = employeeResult.map(row => ({
             id: row.id,
             username: row.username || '',
             firstName: row.firstName || '',
@@ -16,7 +17,8 @@ export async function GET(request: Request) {
             phoneNumber: row.phoneNumber || '',
         }));
         return NextResponse.json(employees);
-    } catch (err: any) {
-        return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        return NextResponse.json({ success: false, error: message }, { status: 500 });
     }
 }
