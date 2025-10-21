@@ -11,7 +11,7 @@ const banners = [
         imageMobile: "/img/rectangle-2-small.png",
     },
     {
-        title: "EXPLORE THE LATEST TRENDS",
+        title: "EXPLORE THE LATEST FASHION TRENDS NOW",
         content:
             "Stay ahead of fashion with our new arrivals, carefully selected for every occasion.",
         image: "/img/rectangle-2.png",
@@ -20,7 +20,7 @@ const banners = [
     {
         title: "QUALITY AND COMFORT GUARANTEED",
         content:
-            "Discover premium fabrics and timeless designs made for your lifestyle.",
+            "Discover premium fabrics and timeless designs thoughtfully made for your lifestyle.",
         image: "/img/rectangle-2.png",
         imageMobile: "/img/rectangle-2-small.png",
     }

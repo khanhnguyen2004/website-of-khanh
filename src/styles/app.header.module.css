@@ -310,6 +310,10 @@
         font-size: 12px;
     }
 
+    .header-top .icon-exit {
+        display: none;
+    }
+
     .header-bottom {
         padding: 0 16px;
         gap: 16px;

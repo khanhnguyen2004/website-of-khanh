@@ -319,6 +319,7 @@
         object-fit: cover;
         max-width: 390px;
         max-height: 448px;
+        margin: 0 auto;
     }
 
     .banner .right .icon-star-banner {

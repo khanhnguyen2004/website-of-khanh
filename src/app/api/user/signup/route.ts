@@ -1,4 +1,3 @@
-import sql from 'mssql';
 import { config } from '../../../../lib/db';
 import { NextResponse } from 'next/server';
 import { InfoUsers, Users } from '@/types/users';
@@ -23,10 +22,8 @@ export async function POST(req: Request) {
     if (checkPhoneNumberResult.length > 0) {
         return NextResponse.json({ message: "Phone number already exists." }, { status: 400 });
     }
-    const [users] = await connection.execute(`INSERT INTO users (username, password) OUTPUT INSERTED.id VALUES (?, ?)`, [username, password]);
-
-    const userResult = users as Users[];
-    const userId = userResult ? userResult[0].id : null;
+    const [users] = await connection.execute(`INSERT INTO users (username, password) VALUES (?, ?)`, [username, password]);
+    const { insertId: userId } = users as { insertId: number };
     await connection.execute(`INSERT INTO infoUsers (firstName, lastName, email, phoneNumber, idUser) VALUES (?, ?, ?, ?, ?)`, [firstName, lastName, email, phoneNumber, userId]);
 
     return NextResponse.json({ message: "User created successfully." }, { status: 201 });

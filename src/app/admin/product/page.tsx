@@ -72,9 +72,6 @@ export default function ProductPage() {
         e.preventDefault();
         try {
             const imageUrl = await uploadImageIfNeed();
-            if (!imageUrl) {
-                return;
-            }
             const response = await fetch('/api/user/product', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -82,7 +79,7 @@ export default function ProductPage() {
                     name: formData.name,
                     price: parseFloat(formData.price),
                     discount: parseInt(formData.discount) || 0,
-                    image: imageUrl
+                    image: imageUrl || null
                 })
             });
             if (!response.ok) {
